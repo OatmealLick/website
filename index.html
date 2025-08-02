@@ -46,6 +46,10 @@
             text-align: center;
             padding: 40px 0;
             background-color: #4a4a4a;
+            transition: background-color 0.3s ease;
+        }
+        .header:hover {
+            background-color: #5a5a5a;
         }
         .header img {
             max-width: 200px;
@@ -57,12 +61,21 @@
             color: #f4f4f4;
             font-family: 'Horta', sans-serif;
             font-weight: 400;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .header h1:hover {
+            color: #f1d82d;
+            transform: translateY(-5px);
         }
         .description {
             text-align: center;
             margin-bottom: 40px;
             font-size: 1.2em;
             color: #cccccc;
+            transition: color 0.3s ease;
+        }
+        .description:hover {
+            color: #ffffff;
         }
         .video-section {
             display: flex;
@@ -85,6 +98,12 @@
             padding: 20px;
             border-radius: 0;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .sponsorship-section div:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         .sponsorship-section h2 {
             font-size: 1.8em;
@@ -92,10 +111,18 @@
             margin-bottom: 10px;
             font-family: 'Horta', sans-serif;
             font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        .sponsorship-section div:hover h2 {
+            color: #f1d82d;
         }
         .sponsorship-section p {
             color: #cccccc;
             margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        .sponsorship-section div:hover p {
+            color: #ffffff;
         }
         .btn {
             display: inline-block;
@@ -109,7 +136,7 @@
             letter-spacing: 1px;
             border: 2px solid #3d3d3d;
             box-shadow: 3px 3px 0 #2a2a2a;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
         .btn:hover {
             background-color: #d9c028;
@@ -128,6 +155,10 @@
             margin-bottom: 10px;
             font-family: 'Horta', sans-serif;
             font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        .support-section h2:hover {
+            color: #f1d82d;
         }
         .support-section ul {
             list-style-type: disc;
@@ -139,6 +170,12 @@
         .support-section li {
             color: #cccccc;
             margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .support-section li:hover {
+            opacity: 1;
+            transform: translateX(10px);
         }
         .info-icon {
             position: relative;
@@ -147,6 +184,10 @@
             cursor: pointer;
             font-size: 0.6em;
             vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+        .info-icon:hover {
+            transform: scale(1.2);
         }
         .info-icon::after {
             content: 'My first name, Łukasz, is pronounced as "Wookash" in English - hence the name!';
