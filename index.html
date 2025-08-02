@@ -42,26 +42,43 @@
             position: relative;
             z-index: 2;
         }
+        .header-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            aspect-ratio: 16 / 9; /* Strictly enforce 16:9 aspect ratio */
+            max-height: 540px; /* Limit height on desktop */
+            overflow: hidden;
+        }
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers container while preserving its native aspect ratio */
+            object-position: center; /* Center image if cropped */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         .header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #4a4a4a;
-            transition: background-color 0.3s ease;
-        }
-        .header:hover {
-            background-color: #5a5a5a;
-        }
-        .header img {
-            max-width: 200px;
-            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Match container height for vertical centering */
+            display: flex;
+            align-items: center; /* Vertically center content */
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 3;
         }
         .header h1 {
-            margin: 10px 0;
+            margin: 0;
             font-size: 2.5em;
             color: #f4f4f4;
             font-family: 'Horta', sans-serif;
             font-weight: 400;
             transition: color 0.3s ease, transform 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .header h1:hover {
             color: #f1d82d;
@@ -219,14 +236,24 @@
                 width: 200px;
                 text-align: center;
             }
+            .header-container {
+                aspect-ratio: 16 / 9; /* Strictly maintain 16:9 on mobile */
+                max-height: 360px; /* Suitable height for mobile */
+            }
+            .header h1 {
+                font-size: 2em;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <img src="logo.png" alt="Your Logo">
-            <h1>Łukasz | Wookash<span class="info-icon">ℹ️</span></h1>
+        <div class="header-container">
+            <img src="wide-photo.png" alt="Header Background" class="header-image">
+            <div class="header">
+                <h1>Łukasz | Wookash<span class="info-icon">ℹ️</span></h1>
+            </div>
         </div>
         <div class="description">
             <p>If you're fascinated by low level programming and would like to know more about it, you will love this podcast!</p>
