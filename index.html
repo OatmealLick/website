@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wookash Podcast</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -46,43 +46,20 @@
             position: relative;
             width: 100%;
             margin-bottom: 20px;
-            aspect-ratio: 16 / 9; /* Strictly enforce 16:9 aspect ratio */
-            max-height: 540px; /* Limit height on desktop */
+            aspect-ratio: 16 / 9;
+            max-height: 270px;
             overflow: hidden;
         }
         .header-image {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure image covers container while preserving its native aspect ratio */
-            object-position: center; /* Center image if cropped */
+            object-fit: contain;
+            object-position: center;
             position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; /* Match container height for vertical centering */
-            display: flex;
-            align-items: center; /* Vertically center content */
-            padding: 20px;
-            box-sizing: border-box;
-            z-index: 3;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #f4f4f4;
-            font-family: 'Horta', sans-serif;
-            font-weight: 400;
-            transition: color 0.3s ease, transform 0.3s ease;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .header h1:hover {
-            color: #f1d82d;
-            transform: translateY(-5px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
         }
         .description {
             text-align: center;
@@ -92,6 +69,16 @@
             transition: color 0.3s ease;
         }
         .description:hover {
+            color: #ffffff;
+        }
+        .name-explanation {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #cccccc;
+            font-style: italic;
+        }
+        .name-explanation:hover {
             color: #ffffff;
         }
         .video-section {
@@ -194,35 +181,24 @@
             opacity: 1;
             transform: translateX(10px);
         }
-        .info-icon {
-            position: relative;
-            display: inline-block;
-            margin-left: 5px;
-            cursor: pointer;
-            font-size: 0.6em;
-            vertical-align: middle;
-            transition: transform 0.3s ease;
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2a2a2a;
+            color: #cccccc;
+            margin-top: 40px;
         }
-        .info-icon:hover {
-            transform: scale(1.2);
+        footer p {
+            margin: 0;
+            font-size: 1em;
         }
-        .info-icon::after {
-            content: 'My first name, Łukasz, is pronounced as "Wookash" in English - hence the name!';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4a4a4a;
-            color: #f4f4f4;
-            padding: 10px;
-            border-radius: 0;
-            font-size: 0.9em;
-            white-space: nowrap;
-            display: none;
-            z-index: 10;
+        footer a {
+            color: #f1d82d;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        .info-icon:hover::after {
-            display: block;
+        footer a:hover {
+            color: #d9c028;
         }
         @media (max-width: 768px) {
             .video-section {
@@ -231,18 +207,9 @@
             .sponsorship-section {
                 flex-direction: column;
             }
-            .info-icon::after {
-                white-space: normal;
-                width: 200px;
-                text-align: center;
-            }
             .header-container {
-                aspect-ratio: 16 / 9; /* Strictly maintain 16:9 on mobile */
-                max-height: 360px; /* Suitable height for mobile */
-            }
-            .header h1 {
-                font-size: 2em;
-                padding: 10px;
+                aspect-ratio: 16 / 9;
+                max-height: 240px;
             }
         }
     </style>
@@ -250,14 +217,14 @@
 <body>
     <div class="container">
         <div class="header-container">
-            <img src="wide-photo.png" alt="Header Background" class="header-image">
-            <div class="header">
-                <h1>Łukasz | Wookash<span class="info-icon">ℹ️</span></h1>
-            </div>
+            <img src="websitelogohd.png" alt="header logo" class="header-image">
         </div>
         <div class="description">
             <p>If you're fascinated by low level programming and would like to know more about it, you will love this podcast!</p>
             <p>Just listen to these incredible minds!</p>
+        </div>
+        <div class="name-explanation">
+            <p>My first name, Łukasz, is pronounced as "Wookash" in English - hence the name!</p>
         </div>
         <div class="video-section">
             <iframe src="https://www.youtube.com/embed/jamU6SQBtxk" allowfullscreen></iframe>
@@ -285,5 +252,8 @@
             </div>
         </div>
     </div>
+    <footer>
+	<p>Contact me at: _thename_ dot podcast at gmail dot com</a> or <a href="https://x.com/wookash_podcast">X</a></p>
+    </footer>
 </body>
 </html>
